@@ -1,0 +1,17 @@
+@(postForm: Form[Post])
+@import helper._
+@import helper.twitterBootstrap._
+
+@main("Post") {
+    @helper.form(action = routes.News.save()) {
+        <fieldset>
+            <legend>Product (@postForm("title").valueOr("New"))</legend>
+                @helper.inputText(postForm("id"), '_label -> "id")
+            @helper.inputText(postForm("title"),'_label -> "title")
+            @helper.textarea(postForm("text"), '_label -> "text")
+        </fieldset>
+
+        <input type="submit" class="btn btn-primary" value="Save">
+        <a class="btn" href="@routes.News.index()">Cancel</a>
+    }
+}
