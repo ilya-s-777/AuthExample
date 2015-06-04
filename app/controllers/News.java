@@ -54,7 +54,7 @@ public class News extends Controller {
         flash("success",
                 String.format("Successfully added product %s", product));
         return redirect(routes.News.index());
-
+//
     }
 
     public static Result delete(long id){
